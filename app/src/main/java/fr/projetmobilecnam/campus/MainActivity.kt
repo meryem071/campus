@@ -25,6 +25,7 @@ import androidx.navigationevent.compose.rememberNavigationEventDispatcherOwner
 import fr.projetmobilecnam.campus.model.sampleEvents
 import fr.projetmobilecnam.campus.ui.theme.CampusTheme
 import fr.projetmobilecnam.campus.ui.theme.EventCard
+import fr.projetmobilecnam.campus.ui.theme.EventListScreen
 
 
 private const val TAG = "Campus"
@@ -36,14 +37,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             CampusTheme {
                 //tout ce qui a en-dessous va passer dans EventListScreen
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    EventCard(
-                        event = sampleEvents[3],
-                        onClick = { Log.d(TAG, "Ouvrir ${sampleEvents[3].id}") },
-                        onBook = { Log.d(TAG, "Réserver ${sampleEvents[3].id}") },
-                        modifier = Modifier.padding(innerPadding).padding(16.dp)
-                    )
-                }
+                EventListScreen(events=sampleEvents)
             }
         }
     }
