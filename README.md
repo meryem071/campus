@@ -10,13 +10,19 @@ L'objectif est de comprendre les différents étapes de réalisation d'une app A
 #### Captures d'écran
 
 - Liste des évènements (mode clair)
-![Liste claire](screenshots/liste_theme_clair.png)
+
+<img src="screenshots/liste_theme_clair.png" width="250">
 
 - Liste des évènements (mode sombre)
-![Liste sombre](screenshots/liste_theme_sombre.png)
+
+<img src="screenshots/liste_theme_sombre.png" width="250">
 
 - Détail d'un évènement
-![Détail](screenshots/detail.png)
+
+<img src="screenshots/detail.png" width="250">
+
 
 - Scrolle fonctionne
-![Ecran](screenshots/scrol_fonctionne.png)
+
+<img src="screenshots/scrol_fonctionne.png" width="250">
+
