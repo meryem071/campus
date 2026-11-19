@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             CampusTheme {
                 //tout ce qui a en-dessous va passer dans EventListScreen
-                EventListScreen(events=sampleEvents)
+//                EventListScreen(events=sampleEvents)
             }
         }
     }
