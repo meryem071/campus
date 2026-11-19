@@ -5,9 +5,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
+import fr.projetmobilecnam.campus.R
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fr.projetmobilecnam.campus.model.Event
@@ -32,12 +35,22 @@ fun EventCard(
 
             Text(event.category)
 
-            Text(event.location ?: "Lieu à confirmer")
+            Text(event.location ?: stringResource(R.string.location_unknown))
 
-            Text(if (event.capacity == 0) "Complet" else "${event.capacity} places")
+            if (event.capacity == 0) {
+                Text(stringResource(R.string.full))
+            } else {
+                    Text(
+                        pluralStringResource(
+                            R.plurals.places,
+                            event.capacity,
+                            event.capacity
+                        )
+                    )
+            }
 
             Button(onClick = onBook, enabled = event.capacity > 0) {
-                Text("Réserver")
+                Text(stringResource(R.string.book))
             }
         }
     }

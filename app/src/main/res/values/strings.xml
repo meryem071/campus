@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Campus</string>
+    <string name="campus_title">Campus</string>
+    <string name="book">Réserver</string>
+    <string name="location_unknown">Lieu à confirmer</string>
+    <string name="full">Complet</string>
+    <string name="event_banner_description">Bannière de l’événement</string>
+    <plurals name="places">
+        <item quantity="one">%d place</item>
+        <item quantity="other">%d places</item>
+    </plurals>
 </resources>
