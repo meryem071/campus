@@ -22,7 +22,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigationevent.compose.rememberNavigationEventDispatcherOwner
+import fr.projetmobilecnam.campus.model.sampleEvents
 import fr.projetmobilecnam.campus.ui.theme.CampusTheme
+import fr.projetmobilecnam.campus.ui.theme.EventCard
 
 
 private const val TAG = "Campus"
@@ -32,20 +34,23 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Scaffold(modifier = Modifier.fillMaxSize()) { //avec scaffold on a innerPadding qui tient compte de la barre detat avec enableEdgeToEdge() donc pas besoin de statusBarsPadding()
-                    innerPadding ->
-                Column(
-                    modifier = Modifier.padding(innerPadding).padding(start = 24.dp, top = 8.dp)
-                ) {
-                    EventHeader("Event Title", "Event Category", null)
-                    MyFirstRow()
+            CampusTheme {
+                //tout ce qui a en-dessous va passer dans EventListScreen
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    EventCard(
+                        event = sampleEvents[3],
+                        onClick = { Log.d(TAG, "Ouvrir ${sampleEvents[3].id}") },
+                        onBook = { Log.d(TAG, "Réserver ${sampleEvents[3].id}") },
+                        modifier = Modifier.padding(innerPadding).padding(16.dp)
+                    )
                 }
             }
         }
     }
 }
 
-@Composable
+//exo en classe seance precedente
+/*@Composable
 fun EventHeader(title: String, category: String, location: String?, modifier: Modifier = Modifier) {
     Column(modifier = modifier) { //padding, start : espace entre le bord gauche du texte
         Text(title)
@@ -87,4 +92,4 @@ fun MyFirstRowPreview(){
     CampusTheme { //pour utiliser les mêmes couleurs et typo de l'app
         MyFirstRow()
     }
-}
+}*/
